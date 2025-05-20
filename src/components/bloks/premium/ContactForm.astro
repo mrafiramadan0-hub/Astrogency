@@ -41,7 +41,7 @@ const contact_topic = topicsData?.find((t) => t.data.uuid === topic);
       <ContactFormVue
         client:visible
         endpoint={`none`}
-        topic={contact_topic}
+        topic={contact_topic?.data}
         {topics}
         {show_topics}
         {thank_you}
@@ -50,6 +50,6 @@ const contact_topic = topicsData?.find((t) => t.data.uuid === topic);
       >
         <div set:html={renderedRichText} class="richtext fade-up max-w-2xl" />
       </ContactFormVue>
-    </div>
+    </div> 
   </div>
 </div>

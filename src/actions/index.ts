@@ -138,6 +138,8 @@ export const server = {
       message,
       lang,
     }) => {
+
+      
       if (CONTACT_FORM_ENDPOINT === "none") {
         return {
           status: "env_missing",

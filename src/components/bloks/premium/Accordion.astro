@@ -38,13 +38,13 @@ if (is_faq) {
         "mainEntity": [
           ${accordion_items
             .map(
-              (item) => `
+              (item: any) => `
             {
               "@type": "Question",
               "name": "${item.title.replace(/"/g, '\\"')}",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "${item.content.replace(/"/g, '\\"').replace(/\n/g, "")}"
+                "text": "${item?.content?.replace(/"/g, '\\"').replace(/\n/g, "")}"
               }
             }
           `,

@@ -81,7 +81,7 @@ const {
       <div class="text flex flex-col">
         <div
           class="richtext max-w-2xl text-pretty"
-          set:html={renderRichText(content)}
+          set:html={renderRichText(content as any)}
         />
         {
           links && links.length > 0 && (

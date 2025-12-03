@@ -25,7 +25,7 @@ const {
   wide = false,
 } = blok;
 
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 
 function getSizes() {
   if (container === "full-width") return "100vw";

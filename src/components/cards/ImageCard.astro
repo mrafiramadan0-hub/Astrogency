@@ -17,7 +17,7 @@ const {
   noRadius = false,
 } = Astro.props;
 
-const text = renderRichText(content);
+const text = renderRichText(content as any);
 ---
 
 {

@@ -60,7 +60,7 @@ const { page_title, title, content, thumbnail, surface, body } = blok;
 
       <div
         class="content richtext mb-8 pt-3 max-w-2xl text-pretty"
-        set:html={renderRichText(content)}
+        set:html={renderRichText(content as any)}
       />
     </div>
   </section>

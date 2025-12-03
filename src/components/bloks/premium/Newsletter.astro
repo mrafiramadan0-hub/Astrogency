@@ -52,7 +52,7 @@ const id = getIdFromContent(content);
         {
           content && (
             <div
-              set:html={renderRichText(content)}
+              set:html={renderRichText(content as any)}
               class="richtext fade-up max-w-2xl text-balance empty:hidden"
             />
           )

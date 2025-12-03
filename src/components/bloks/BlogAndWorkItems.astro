@@ -60,7 +60,7 @@ const id = getIdFromContent(content);
 > 
   <div class="content-grid gap-y-8" {id}>
     <div class={container}>
-      <div class="richtext max-w-2xl" set:html={renderRichText(content)} />
+      <div class="richtext max-w-2xl" set:html={renderRichText(content as any)} />
     </div>
     {
       stories && stories.length > 0 && (

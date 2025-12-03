@@ -40,7 +40,7 @@ const fetchStories = async () => {
 
 const stories = (await fetchStories()) as Array<ServiceData>;
 
-const renderedContent = renderRichText(content);
+const renderedContent = renderRichText(content as any);
 
 const id = getIdFromContent(content);
 ---

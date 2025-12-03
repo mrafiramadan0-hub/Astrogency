@@ -3,6 +3,8 @@ const require = createRequire(import.meta.url);
 const plugin = require("tailwindcss/plugin");
 const animate = require("tailwindcss-animate");
 const containerQueries = require("@tailwindcss/container-queries");
+// Explicitly mark require as used to suppress TypeScript warning
+void require;
 
 /** @type {import('tailwindcss').Config} */
 export default {

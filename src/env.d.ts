@@ -3,6 +3,12 @@
 /// <reference types="astro/client" />
 /// <reference types="@storyblok/astro" />
 
+declare module "*.vue" {
+  import type { DefineComponent } from "vue";
+  const component: DefineComponent<{}, {}, any>;
+  export default component;
+}
+
 type PageData = import('./content/storyBlockSchema').PageData;
 type PostData = import('./content/storyBlockSchema').PostData;
 type WorkData = import('./content/storyBlockSchema').WorkData;

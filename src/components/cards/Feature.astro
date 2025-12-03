@@ -10,7 +10,7 @@ interface Props {
 
 const { blok, surface } = Astro.props;
 const { content, links, icon } = blok;
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 ---
 
 <div

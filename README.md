@@ -63,6 +63,8 @@ Enjoy the freedom of no attribution, effortless integration with Mailgun, Postma
 
 ### 👉 [more information](https://astrogency.unfolding.io/blog/premium-components-and-features/)
 
+- **Premium Components Unlocked in latest version**: All premium compomponents are now available in the free version, including carousel components, accordions, pricing tables, and more.
+
 
 
 ## 🛸 Commands

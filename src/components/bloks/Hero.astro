@@ -21,7 +21,7 @@ const {
   accent_color,
 } = blok;
 
-const text = renderRichText(content);
+const text = renderRichText(content as any);
 ---
 
 <div
@@ -87,7 +87,7 @@ const text = renderRichText(content);
       />
 
       <div
-        class={`lg:col-span-4 flex flex-col relative justify-end gap-3 ${links && links.length > 0 && "lg:-mb-122"}`}
+        class={`lg:col-span-4 flex flex-col relative justify-end gap-3 `}
       >
         {content && <div class="text-xl" set:html={text} />}
         {
@@ -105,7 +105,7 @@ const text = renderRichText(content);
 </div>
 
 <style is:global>
-  @screen md {
+  @media (min-width: 768px) {
     .hero {
       min-height: max(100svh, 30rem);
     }

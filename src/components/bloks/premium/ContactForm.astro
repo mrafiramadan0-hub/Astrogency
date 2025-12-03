@@ -22,7 +22,7 @@ const {
   padding_top = "pt-lg",
   padding_bottom= "pb-lg"
 } = blok;
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 
 /* get the current lang */
 const lang = getLangFromUrl(Astro.url); 

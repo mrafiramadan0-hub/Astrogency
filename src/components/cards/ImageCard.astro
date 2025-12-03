@@ -17,7 +17,7 @@ const {
   noRadius = false,
 } = Astro.props;
 
-const text = renderRichText(content);
+const text = renderRichText(content as any);
 ---
 
 {
@@ -92,6 +92,8 @@ const text = renderRichText(content);
 }
 
 <style>
+  @reference "#app.css";
+  
   .image-card {
     grid-template-rows: auto 1fr;
     &.hass-bg {

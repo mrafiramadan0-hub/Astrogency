@@ -160,21 +160,21 @@ let socialImage = meta.image + "/m/1200x630/smart/filters:format(png)";
       }}
     >
       :root {
-        --font-sysem-ui: theme(fontFamily.system-ui);
-        --font-humanist: theme(fontFamily.humanist);
-        --font-neo-grotesque: theme(fontFamily.neo-grotesque);
-        --font-font-geometric-humanist: theme(fontFamily.geometric-humanist);
-        --font-classical-humanist: theme(fontFamily.classical-humanist);
-        --font-industrial: theme(fontFamily.industrial);
-        --font-rounded-sans: theme(fontFamily.rounded-sans);
-        --font-transitional: theme(fontFamily.transitional);
-        --font-old-style: theme(fontFamily.old-style);
-        --font-antique: theme(fontFamily.antique);
-        --font-didone: theme(fontFamily.didone);
-        --font-slab-serif: theme(fontFamily.slab-serif);
-        --font-monospace-slab-serif: theme(fontFamily.monospace-slab-serif);
-        --font-monospace-code: theme(fontFamily.monospace-code);
-        --font-handwritten: theme(fontFamily.handwritten);
+        --font-sysem-ui: var(--font-family-system-ui);
+        --font-humanist: var(--font-family-humanist);
+        --font-neo-grotesque: var(--font-family-neo-grotesque);
+        --font-font-geometric-humanist: var(--font-family-geometric-humanist);
+        --font-classical-humanist: var(--font-family-classical-humanist);
+        --font-industrial: var(--font-family-industrial);
+        --font-rounded-sans: var(--font-family-rounded-sans);
+        --font-transitional: var(--font-family-transitional);
+        --font-old-style: var(--font-family-old-style);
+        --font-antique: var(--font-family-antique);
+        --font-didone: var(--font-family-didone);
+        --font-slab-serif: var(--font-family-slab-serif);
+        --font-monospace-slab-serif: var(--font-family-monospace-slab-serif);
+        --font-monospace-code: var(--font-family-monospace-code);
+        --font-handwritten: var(--font-family-handwritten);
         --border: 0 0% 89.8%;
         --input: 0 0% 89.8%;
         --ring: 0 0% 3.9%;
@@ -182,10 +182,18 @@ let socialImage = meta.image + "/m/1200x630/smart/filters:format(png)";
         --padding-inline: 1rem;
         --content-max-width: 1000px;
         --breakout-max-width: 1400px;
-        @screen sm {
+
+        --xs: 320px;
+        --sm: 640px;
+        --md: 768px;
+        --lg: 1024px;
+        --xl: 1280px;
+        --2xl: 1536px;
+
+        @media (min-width: 640px) {
           --padding-inline: 2rem;
         }
-        @screen md {
+        @media (min-width: 768px) {
           --padding-inline: 4rem;
         }
       }

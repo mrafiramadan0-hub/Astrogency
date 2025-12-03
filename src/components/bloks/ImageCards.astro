@@ -28,7 +28,7 @@ const {
   min_height="0",
 } = blok;
 
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 const count = items.length;
 
 const columns = {
@@ -94,17 +94,17 @@ const contentClass = `${align} ${container} ${container === "full-width" && !noR
     min-height: var(--min-height);
     gap: var(--gap-xs);
     grid-template-columns: repeat(var(--columns-xs), 1fr);
-    @screen sm {
+    @media (min-width: 640px) {
       grid-template-columns: repeat(var(--columns-sm), 1fr);
     }
-    @screen md {
+    @media (min-width: 768px) {
       gap: var(--gap-md);
       grid-template-columns: repeat(var(--columns-md), 1fr);
     }
-    @screen lg {
+    @media (min-width: 1024px) {
       grid-template-columns: repeat(var(--columns-lg), 1fr);
     }
-    @screen xl {
+    @media (min-width: 1280px) {
       gap: var(--gap-xl);
       grid-template-columns: repeat(var(--columns-xl), 1fr);
     }

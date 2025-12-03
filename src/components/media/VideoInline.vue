@@ -93,6 +93,8 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
+@reference "#app.css";
+
 .video-inline {
   &:after {
     content: "";

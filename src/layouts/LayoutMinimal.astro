@@ -67,7 +67,7 @@ const lang = getLangFromUrl(Astro.url);
     />
     <style>
       :root {
-        --font-sysem-ui: theme(fontFamily.system-ui);
+        --font-sysem-ui: var(--font-family-system-ui);
         --dark-fg: 247 254 231;
         --dark-bg: 64 64 64;
         --light-fg: 64 64 64;
@@ -106,7 +106,7 @@ const lang = getLangFromUrl(Astro.url);
         --content-max-width: 900px;
         --breakout-max-width: 1200px;
 
-        @screen md {
+        @media (min-width: 768px) {
           --padding-inline: 1rem;
         }
       }

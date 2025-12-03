@@ -153,8 +153,8 @@ function getMediaSizes() {
       className={carousel_surface}
       {arrows_overlay}
       {auto_scroll_direction}
-      {auto_scroll_speed}
-      {delay}
+      auto_scroll_speed={Number(auto_scroll_speed) || 2}
+      delay={Number(delay) || 4000}
     >
       {
         type === "cards" &&

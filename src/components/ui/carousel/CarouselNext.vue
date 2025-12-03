@@ -16,7 +16,7 @@ const { orientation, canScrollNext, scrollNext } = useCarousel()
     :class="cn(
       'bg-opacity-0',
       props.class,
-      'touch-manipulation h-8 w-8 border-current',
+      'touch-manipulationb order-current',
       orientation === 'horizontal'
         ? ''
         : 'rotate-90',

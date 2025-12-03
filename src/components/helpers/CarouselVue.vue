@@ -27,7 +27,7 @@
       </CarouselItem>
     </CarouselContent>
     <div
-      class="carousel-nav flex justify-end gap-2 py-4"
+      class="carousel-nav flex justify-end gap-2 py-4 pl-2"
       :class="arrows_overlay ? 'absolute inset-x-0 bottom-0' : ''"
       v-if="navigation"
     >
@@ -97,16 +97,22 @@ const props = defineProps({
     default: false,
   },
   auto_scroll_speed: {
-    type: Number,
+    type: [Number, String],
     default: 2,
+    validator: (value) => {
+      return !isNaN(Number(value));
+    },
   },
   auto_scroll_direction: {
     type: String,
     default: "forward",
   },
   delay: {
-    type: Number,
+    type: [Number, String],
     default: 4000,
+    validator: (value) => {
+      return !isNaN(Number(value));
+    },
   },
 });
 
@@ -117,12 +123,16 @@ const plugins = computed(() => {
     pluginsArray.push(WheelGesturesPlugin());
   }
   if (props.autoplay) {
-    pluginsArray.push(Autoplay({ delay: props.delay }));
+    // Ensure delay is a valid number (explicitly convert to avoid reactivity issues)
+    const delayValue = Number(props.delay) || 4000;
+    pluginsArray.push(Autoplay({ delay: delayValue > 0 ? delayValue : 4000 }));
   }
   if (props.autoscroll) {
+    // Ensure speed is a valid number
+    const speedValue = Number(props.auto_scroll_speed) || 2;
     pluginsArray.push(
       AutoScroll({
-        speed: props.auto_scroll_speed,
+        speed: speedValue > 0 ? speedValue : 2,
         direction: props.auto_scroll_direction,
       }),
     );

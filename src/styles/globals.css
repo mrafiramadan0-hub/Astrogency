@@ -1,6 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  --color-primary: rgb(var(--primary-bg));
+  --color-primary-foreground: rgb(var(--primary-fg));
+  
+  --color-secondary: rgb(var(--secondary-bg));
+  --color-secondary-foreground: rgb(var(--secondary-fg));
+  
+  --color-warning: rgb(var(--warning-bg));
+  --color-warning-foreground: rgb(var(--warning-fg));
+  
+  --color-danger: rgb(var(--danger-bg));
+  --color-danger-foreground: rgb(var(--danger-fg));
+  
+  --color-success: rgb(var(--success-bg));
+  --color-success-foreground: rgb(var(--success-fg));
+  
+  --color-accent: rgb(var(--accent-bg));
+  --color-accent-foreground: rgb(var(--accent-fg));
+  
+  --color-dark: rgb(var(--dark-bg));
+  --color-dark-foreground: rgb(var(--dark-fg));
+  
+  --color-light: rgb(var(--light-bg));
+  --color-light-foreground: rgb(var(--light-fg));
+  
+  --color-muted: rgb(var(--muted-bg));
+  --color-muted-foreground: rgb(var(--muted-fg));
+  
+  --color-info: rgb(var(--info-bg));
+  --color-info-foreground: rgb(var(--info-fg));
+  
+  --color-popover: rgb(var(--accent-bg));
+  --color-popover-foreground: rgb(var(--accent-fg));
+  
+  --color-card: rgb(var(--light-bg));
+  --color-card-foreground: rgb(var(--light-fg));
+
+  /* Font Families */
+  --font-family-system-ui: system-ui, sans-serif;
+  --font-family-didone: Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif;
+  --font-family-antique: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+  --font-family-slab-serif: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+  --font-family-neo-grotesque: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  --font-family-transitional: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --font-family-old-style: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  --font-family-geometric-humanist: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --font-family-classical-humanist: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+  --font-family-humanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+  --font-family-monospace-slab-serif: 'Nimbus Mono PS', 'Courier New', monospace;
+  --font-family-monospace-code: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --font-family-industrial: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  --font-family-rounded-sans: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+  --font-family-handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+
+  /* Border Radius */
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+@keyframes collapsible-down {
+  from { height: 0; }
+  to { height: var(--radix-collapsible-content-height); }
+}
+
+@keyframes collapsible-up {
+  from { height: var(--radix-collapsible-content-height); }
+  to { height: 0; }
+}
 
 * {
   @apply border-border;

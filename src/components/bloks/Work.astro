@@ -122,6 +122,8 @@ const {
 </main>
 
 <style>
+  @reference "#app.css";
+  
   .work-grid {
     @apply grid grid-cols-2 gap-4;
     grid-template-areas:
@@ -130,7 +132,7 @@ const {
       "🛎 🛎"
       "🖼 🖼";
 
-    @screen md {
+    @media (min-width: 768px) {
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2rem;
       grid-template-areas:

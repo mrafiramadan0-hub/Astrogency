@@ -42,6 +42,8 @@ const scrollUpOrDown = () => {
 </script>
 
 <style lang="postcss">
+@reference "#app.css";
+
 [data-is-hero="false"] {
   .scroll-down svg {
     @apply rotate-180;

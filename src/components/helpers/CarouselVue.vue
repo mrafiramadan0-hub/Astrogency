@@ -43,7 +43,6 @@ import { useSlots, computed } from "vue";
 import { renderToString } from "@vue/server-renderer";
 import Autoplay from "embla-carousel-autoplay";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import {
   Carousel,
   CarouselContent,
@@ -51,6 +50,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
+// Conditionally import WheelGesturesPlugin only in browser
+let WheelGesturesPlugin = null;
+if (typeof window !== 'undefined') {
+  const wheelGestures = await import("embla-carousel-wheel-gestures");
+  WheelGesturesPlugin = wheelGestures.WheelGesturesPlugin;
+}
 
 const props = defineProps({
   bottom: {
@@ -103,8 +109,13 @@ const props = defineProps({
     default: 4000,
   },
 });
+
 const plugins = computed(() => {
-  const pluginsArray = [WheelGesturesPlugin()];
+  const pluginsArray = [];
+  // Only add WheelGesturesPlugin if available (client-side only)
+  if (WheelGesturesPlugin) {
+    pluginsArray.push(WheelGesturesPlugin());
+  }
   if (props.autoplay) {
     pluginsArray.push(Autoplay({ delay: props.delay }));
   }
@@ -136,19 +147,21 @@ const links = innerHtml
 </script>
 
 <style lang="postcss">
+@reference "#app.css";
+
 .carousel-container {
   --carousel-gap: var(--gap-xs);
-  @screen sm {
+  @media (min-width: 640px) {
     --carousel-gap: var(--gap-sm);
   }
-  @screen md {
+  @media (min-width: 768px) {
     --carousel-gap: var(--gap-md);
   }
 
-  @screen lg {
+  @media (min-width: 1024px) {
     --carousel-gap: var(--gap-lg);
   }
-  @screen xl {
+  @media (min-width: 1280px) {
     --carousel-gap: var(--gap-xl);
   }
 }
@@ -180,23 +193,23 @@ const links = innerHtml
     var(--width-xs) - var(--carousel-gap) * var(--correction-xs)
   );
 
-  @screen sm {
+  @media (min-width: 640px) {
     grid-auto-columns: calc(
       var(--width-sm) - var(--carousel-gap) * var(--correction-sm)
     );
   }
-  @screen md {
+  @media (min-width: 768px) {
     grid-auto-columns: calc(
       var(--width-md) - var(--carousel-gap) * var(--correction-md)
     );
   }
 
-  @screen lg {
+  @media (min-width: 1024px) {
     grid-auto-columns: calc(
       var(--width-lg) - var(--carousel-gap) * var(--correction-lg)
     );
   }
-  @screen xl {
+  @media (min-width: 1280px) {
     grid-auto-columns: calc(
       var(--width-xl) - (var(--carousel-gap) * var(--correction-xl))
     );

@@ -84,16 +84,16 @@ const contentClass = `${align} ${container} ${container === "full-width" ? "px-2
 <style>
   .gallery-grid {
     grid-template-columns: repeat(var(--columns-xs), 1fr);
-    @screen sm {
+    @media (min-width: 640px) {
       grid-template-columns: repeat(var(--columns-sm), 1fr);
     }
-    @screen md {
+    @media (min-width: 768px) {
       grid-template-columns: repeat(var(--columns-md), 1fr);
     }
-    @screen lg {
+    @media (min-width: 1024px) {
       grid-template-columns: repeat(var(--columns-lg), 1fr);
     }
-    @screen xl {
+    @media (min-width: 1280px) {
       grid-template-columns: repeat(var(--columns-xl), 1fr);
     }
 
@@ -103,6 +103,8 @@ const contentClass = `${align} ${container} ${container === "full-width" ? "px-2
   }
 </style>
 <style is:global>
+  @reference "#app.css";
+  
   .image_card {
     @apply grid gap-3;
     h2,

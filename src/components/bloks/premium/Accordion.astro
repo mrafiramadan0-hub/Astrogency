@@ -18,13 +18,13 @@ const {
   is_faq = false,
 } = blok;
 
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 
 const accordion_items = await Promise.all(
   items.map(async (item: any) => {
     return {
       title: item.title,
-      content: renderRichText(item.content),
+      content: renderRichText(item.content as any),
     };
   }),
 );

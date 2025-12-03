@@ -27,7 +27,7 @@ const {
   crop = true,
 } = blok;
 
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 const id = getIdFromContent(content);
 
 function getSizes() {
@@ -125,14 +125,14 @@ const contentClass = `w-full richtext max-w-2xl relative z-40 mx-auto md:mx-0 gr
 <style>
   .text-media {
     &__container {
-      @screen md {
+      @media (min-width: 768px) {
         grid-template-columns: var(--media-col-width) minmax(
             22rem,
             var(--text-col-width)
           );
       }
     }
-    @screen md {
+    @media (min-width: 768px) {
       &.reverse .text-media__container {
         grid-template-columns: minmax(22rem, var(--text-col-width)) var(
             --media-col-width

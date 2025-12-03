@@ -144,7 +144,7 @@ if (!meta.title || !meta.description || !meta.image)
           />
           <div
             class="richtext no-lead text-balance"
-            set:html={renderRichText(category?.content || blog_content)}
+            set:html={renderRichText((category?.content || blog_content) as any)}
           />
         </div>
         {

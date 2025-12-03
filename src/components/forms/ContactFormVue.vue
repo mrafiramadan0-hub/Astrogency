@@ -195,6 +195,8 @@ onMounted(() => {
 </script>
 
 <style lang="postcss" scoped>
+@reference "#app.css";
+
 .input-group {
   @apply relative flex flex-col justify-center text-current;
 }

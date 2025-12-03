@@ -10,7 +10,7 @@ interface Props {
 
 const { blok, surface } = Astro.props;
 const { content, links, icon } = blok;
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 ---
 
 <div
@@ -42,6 +42,8 @@ const renderedRichText = renderRichText(content);
 </div>
 
 <style is:global>
+  @reference "#app.css";
+  
   .feature .richtext {
     h3,
     h4,

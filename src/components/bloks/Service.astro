@@ -60,7 +60,7 @@ const { page_title, title, content, thumbnail, surface, body } = blok;
 
       <div
         class="content richtext mb-8 pt-3 max-w-2xl text-pretty"
-        set:html={renderRichText(content)}
+        set:html={renderRichText(content as any)}
       />
     </div>
   </section>
@@ -68,6 +68,8 @@ const { page_title, title, content, thumbnail, surface, body } = blok;
 </main>
 
 <style>
+  @reference "#app.css";
+  
   .service-grid {
     @apply auto-rows-auto grid-cols-1;
     grid-template-areas:
@@ -76,7 +78,7 @@ const { page_title, title, content, thumbnail, surface, body } = blok;
       "🛎"
       "🖼";
 
-    @screen md {
+    @media (min-width: 768px) {
       @apply grid-cols-3;
 
       grid-template-areas:

@@ -20,7 +20,7 @@ const {
   title,
 } = blok;
 
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 ---
 
 <div 
@@ -75,6 +75,8 @@ const renderedRichText = renderRichText(content);
 </div>
 
 <style is:global>
+  @reference "#app.css";
+  
   .price-content {
     ul,
     ol {

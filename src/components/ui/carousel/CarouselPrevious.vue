@@ -15,7 +15,7 @@ const { orientation, canScrollPrev, scrollPrev } = useCarousel();
     :disabled="!canScrollPrev"
     :class="
       cn(
-        'h-8 w-8 touch-manipulation border-current bg-transparent bg-opacity-0',
+        'touch-manipulation border-current bg-transparent bg-opacity-0',
         orientation === 'horizontal' ? '' : 'rotate-90',
         props.class,
       )

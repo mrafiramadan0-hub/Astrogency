@@ -17,7 +17,7 @@ const {
   container,
 } = blok;
 
-const renderedRichText = renderRichText(content);
+const renderedRichText = renderRichText(content as any);
 ---
 
 <div {...storyblokEditable(blok)} class={`${surface} intersection`}>

@@ -1,7 +1,6 @@
 import { defineConfig, envField } from "astro/config";
 import { loadEnv } from "vite";
-import basicSsl from "@vitejs/plugin-basic-ssl";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { storyblok } from '@storyblok/astro';
 import vue from "@astrojs/vue";
 import icon from "astro-icon";
@@ -44,9 +43,6 @@ export default defineConfig({
       apiOptions: {
         region: env.STORYBLOK_REGION, // Possible values: "ap", "eu", "us", "ca", "cn" (Default: "eu")
       },
-    }),
-    tailwind({
-      applyBaseStyles: false,
     }),
     vue({
       appEntrypoint: "/src/pages/_app",
@@ -117,10 +113,11 @@ export default defineConfig({
     inlineStylesheets: "always",
   },
   vite: {
-    plugins: [basicSsl()],
-    server: {
-      https: true,
+    plugins: [tailwindcss()],
+    css: {
+      postcss: true,
     },
+   
   },
   experimental: { 
     

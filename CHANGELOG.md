@@ -1,5 +1,14 @@
 # 🪵 CHANGELOG
 
+## v.0.0.4
+This update brings comprehensive package upgrades and makes all premium features available in the free version.
+
+### Highlights:
+- **Dependency Updates**: All packages have been upgraded to their latest versions for improved security, performance, and compatibility.
+- **Premium Components Unlocked**: All premium Components are now available in the free version, including carousel components, accordions, pricing tables, and more.
+
+
+
 ## 🚀 v0.0.3  
 This update brings significant performance improvements with faster build times and more flexibility for server-side rendering (SSR). We’ve upgraded to the latest Astro version and migrated from the Storyblok API to Astro's Content Layer.  
 

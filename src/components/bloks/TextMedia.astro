@@ -123,21 +123,20 @@ const contentClass = `w-full richtext max-w-2xl relative z-40 mx-auto md:mx-0 gr
 </div>
 
 <style>
-  .text-media {
-    &__container {
-      @media (min-width: 768px) {
-        grid-template-columns: var(--media-col-width) minmax(
-            22rem,
-            var(--text-col-width)
-          );
-      }
-    }
+  .text-media__container {
     @media (min-width: 768px) {
-      &.reverse .text-media__container {
-        grid-template-columns: minmax(22rem, var(--text-col-width)) var(
-            --media-col-width
-          );
-      }
+      grid-template-columns: var(--media-col-width) minmax(
+          22rem,
+          var(--text-col-width)
+        );
+    }
+  }
+
+  @media (min-width: 768px) {
+    .text-media.reverse .text-media__container {
+      grid-template-columns: minmax(22rem, var(--text-col-width)) var(
+          --media-col-width
+        );
     }
   }
 </style>

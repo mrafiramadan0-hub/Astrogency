@@ -157,45 +157,52 @@ body {
 
 /* BLOCK PADDING */
 
-.pt {
-  &-xs {
-    @apply pt-2;
-  }
-  &-sm {
-    @apply pt-4;
-  }
-  &-md {
-    @apply pt-8;
-  }
-  &-lg {
-    @apply pt-8 sm:pt-14;
-  }
-  &-xl {
-    @apply pt-8 sm:pt-14 md:pt-20;
-  }
-  &-2xl {
-    @apply pt-20 md:pt-32;
-  }
+.pt-xs {
+  @apply pt-2;
 }
-.pb {
-  &-xs {
-    @apply pb-2;
-  }
-  &-sm {
-    @apply pb-4;
-  }
-  &-md {
-    @apply pb-8;
-  }
-  &-lg {
-    @apply pb-8 sm:pb-14;
-  }
-  &-xl {
-    @apply pb-8 sm:pb-14 md:pb-20;
-  }
-  &-2xl {
-    @apply pb-20 md:pb-32;
-  }
+
+.pt-sm {
+  @apply pt-4;
+}
+
+.pt-md {
+  @apply pt-8;
+}
+
+.pt-lg {
+  @apply pt-8 sm:pt-14;
+}
+
+.pt-xl {
+  @apply pt-8 sm:pt-14 md:pt-20;
+}
+
+.pt-2xl {
+  @apply pt-20 md:pt-32;
+}
+
+.pb-xs {
+  @apply pb-2;
+}
+
+.pb-sm {
+  @apply pb-4;
+}
+
+.pb-md {
+  @apply pb-8;
+}
+
+.pb-lg {
+  @apply pb-8 sm:pb-14;
+}
+
+.pb-xl {
+  @apply pb-8 sm:pb-14 md:pb-20;
+}
+
+.pb-2xl {
+  @apply pb-20 md:pb-32;
 }
 
 /* TYPOGRAPHY */
@@ -349,57 +356,58 @@ sub {
 
 /* BUTTONS, LINKS & NAVIGATION */
 
+.btn:not([class^="surface-"]) {
+  @apply bg-primary text-primary-foreground;
+}
+
 .btn {
-
-  &:not([class^="surface-"]) {
-    @apply bg-primary text-primary-foreground;
-  }
-
   border-radius: var(--radius-input);
   @apply inline-flex max-w-full items-center justify-center gap-1 px-4 py-2 leading-tight tracking-wide transition-all duration-300 hover:bg-dark hover:text-dark-foreground;
+}
 
-  
+.btn-sm {
+  border-radius: var(--radius-input);
+  @apply inline-flex max-w-full items-center gap-2 rounded-2xl px-4 py-1 text-sm transition-all duration-300;
+}
 
-  &-sm {
-    border-radius: var(--radius-input);
-    @apply inline-flex max-w-full items-center gap-2 rounded-2xl px-4 py-1 text-sm transition-all duration-300;
-    &:not([class^="surface-"]) {
-      @apply bg-primary text-primary-foreground;
-    }
-  }
+.btn-sm:not([class^="surface-"]) {
+  @apply bg-primary text-primary-foreground;
+}
 
-  &-nav {
-    border-radius: var(--radius-input);
-    @apply inline-flex max-w-full items-center gap-2 px-2 py-1 text-sm transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
-  }
+.btn-nav {
+  border-radius: var(--radius-input);
+  @apply inline-flex max-w-full items-center gap-2 px-2 py-1 text-sm transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+}
 
-  
-  &-icon {
-    border-radius: var(--radius-input);
-    @apply grid aspect-square min-h-3 place-items-center p-2.5;
-    line-height: 1 !important;
-  }
-  &-icon-s {
-    border-radius: var(--radius-input);
-    @apply grid aspect-square min-h-3 place-items-center p-1.5;
-    line-height: 1 !important;
-  }
-  &-underline {
-    @apply relative inline-flex items-center gap-2;
-    font-family: var(--font-heading);
-    &:after {
-      content: "";
-      border-radius: var(--radius-input);
-      @apply absolute inset-x-0 bottom-0 h-0.5 w-full origin-left scale-x-0 bg-current transition-transform duration-300;
-    }
-    &:hover:after {
-      @apply scale-x-100;
-    }
-  }
+.btn-icon {
+  border-radius: var(--radius-input);
+  @apply grid aspect-square min-h-3 place-items-center p-2.5;
+  line-height: 1 !important;
+}
 
-  span {
-    @apply inline-block;
-  }
+.btn-icon-s {
+  border-radius: var(--radius-input);
+  @apply grid aspect-square min-h-3 place-items-center p-1.5;
+  line-height: 1 !important;
+}
+
+.btn-underline {
+  @apply relative inline-flex items-center gap-2;
+  font-family: var(--font-heading);
+}
+
+.btn-underline:after {
+  content: "";
+  border-radius: var(--radius-input);
+  @apply absolute inset-x-0 bottom-0 h-0.5 w-full origin-left scale-x-0 bg-current transition-transform duration-300;
+}
+
+.btn-underline:hover:after {
+  @apply scale-x-100;
+}
+
+.btn span {
+  @apply inline-block;
 }
 
 
@@ -419,60 +427,68 @@ sub {
 
 /* SURFACES */
 
-.surface {
-  &-primary {
-    @apply bg-primary text-primary-foreground;
+.surface-primary {
+  @apply bg-primary text-primary-foreground;
+}
 
-    .btn:not([class^="surface-"]) {
-      @apply bg-secondary text-secondary-foreground hover:bg-dark hover:text-dark-foreground;
-    }
+.surface-primary .btn:not([class^="surface-"]) {
+  @apply bg-secondary text-secondary-foreground hover:bg-dark hover:text-dark-foreground;
+}
 
-    .btn-sm:not([class^="surface-"]) {
-      @apply bg-secondary text-secondary-foreground hover:bg-dark hover:text-dark-foreground;
-    }
-  }
-  &-secondary {
-    @apply bg-secondary text-secondary-foreground;
-  }
-  &-accent {
-    @apply bg-accent text-accent-foreground;
-  }
-  &-warning {
-    @apply bg-warning text-warning-foreground;
-  }
-  &-success {
-    @apply bg-success text-success-foreground;
-  }
-  &-danger {
-    @apply bg-danger text-danger-foreground;
-  }
-  &-muted {
-    @apply bg-muted text-muted-foreground;
-  }
-  &-info {
-    @apply bg-info text-info-foreground;
-  }
-  &-dark {
-    @apply bg-dark text-dark-foreground;
+.surface-primary .btn-sm:not([class^="surface-"]) {
+  @apply bg-secondary text-secondary-foreground hover:bg-dark hover:text-dark-foreground;
+}
 
-    .btn:not([class^="surface-"]) {
-      @apply hover:bg-light hover:text-light-foreground;
-    }
+.surface-secondary {
+  @apply bg-secondary text-secondary-foreground;
+}
 
-    .btn-sm:not([class^="surface-"]) {
-      @apply hover:bg-light hover:text-light-foreground;
-    }
+.surface-accent {
+  @apply bg-accent text-accent-foreground;
+}
 
-  }
-  &-light {
-    @apply bg-light text-light-foreground;
-  }
-  &-input {
-    @apply bg-light text-light-foreground;
-  }
-  &-menu {
-    @apply bg-light text-light-foreground;
-  }
+.surface-warning {
+  @apply bg-warning text-warning-foreground;
+}
+
+.surface-success {
+  @apply bg-success text-success-foreground;
+}
+
+.surface-danger {
+  @apply bg-danger text-danger-foreground;
+}
+
+.surface-muted {
+  @apply bg-muted text-muted-foreground;
+}
+
+.surface-info {
+  @apply bg-info text-info-foreground;
+}
+
+.surface-dark {
+  @apply bg-dark text-dark-foreground;
+}
+
+.surface-dark .btn:not([class^="surface-"]) {
+  @apply hover:bg-light hover:text-light-foreground;
+}
+
+.surface-dark .btn-sm:not([class^="surface-"]) {
+  @apply hover:bg-light hover:text-light-foreground;
+}
+
+.surface-light {
+  @apply bg-light text-light-foreground;
+}
+
+.surface-input {
+  @apply bg-light text-light-foreground;
+}
+
+.surface-menu {
+  @apply bg-light text-light-foreground;
 }
 .media-bg {
   @apply relative;
